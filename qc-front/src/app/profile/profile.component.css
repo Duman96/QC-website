@@ -1,6 +1,49 @@
-body{
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+.example {
+    transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay];
 }
+
+html, body
+{
+	height: 100%;
+}
+
+body
+{
+	margin: 0px;
+	padding: 0px;
+	background: #171717;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 12pt;
+	font-weight: 300;
+	color: #363636;
+}
+
+h1, h2, h3
+{
+	margin: 0;
+	padding: 0;
+}
+
+p, ol, ul
+{
+	margin-top: 0px;
+}
+
+p
+{
+	line-height: 180%;
+}
+
+a
+{
+	color: #EBA612;
+}
+
+a:hover
+{
+	text-decoration: none;
+}
+
 .emp-profile{
     padding: 3%;
     margin-top: 3%;

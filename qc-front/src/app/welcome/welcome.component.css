@@ -1,0 +1,174 @@
+.example {
+    transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay];
+}
+
+html, body
+{
+	height: 100%;
+}
+
+body
+{
+	margin: 0px;
+	padding: 0px;
+	background: #171717;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 12pt;
+	font-weight: 300;
+	color: #363636;
+}
+
+h1, h2, h3
+{
+	margin: 0;
+	padding: 0;
+}
+
+p, ol, ul
+{
+	margin-top: 0px;
+}
+
+p
+{
+	line-height: 180%;
+}
+
+strong
+{
+}
+
+a
+{
+	color: #EBA612;
+}
+
+a:hover
+{
+	text-decoration: none;
+}
+
+a img
+{
+	border: none;
+}
+
+.button
+{
+    display: inline-block;
+    margin-top: 2em;
+    padding: 1em 3em;
+    background: #FCC44B;
+    -moz-transition: opacity 0.25s ease-in-out;
+    -webkit-transition: opacity 0.25s ease-in-out;
+    -o-transition: opacity 0.25s ease-in-out;
+    -ms-transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
+    letter-spacing: 0.20em;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.90em;
+    color: #000;
+}
+
+.button:hover
+{
+    background: #FBC551;
+    -moz-transition: opacity 0.25s ease-in-out;
+    -webkit-transition: opacity 0.25s ease-in-out;
+    -o-transition: opacity 0.25s ease-in-out;
+    -ms-transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
+}
+
+.button:active
+{
+    background: #F2B42F;
+    -moz-transition: opacity 0.25s ease-in-out;
+    -webkit-transition: opacity 0.25s ease-in-out;
+    -o-transition: opacity 0.25s ease-in-out;
+    -ms-transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
+}
+
+#wrapper {
+	background: #FFFFFF url(/assets/img/bg01.png) repeat;
+}
+
+.container
+{
+	width: 1200px;
+	margin: 0px auto;
+}
+
+#page
+{
+    position: relative;
+    overflow: hidden;
+    padding: 6em 0em 5em 0em;
+}
+
+#content
+{
+    float: left;
+    width: 750px;
+}
+
+.title
+{
+    margin-bottom: 3em;
+    text-transform: uppercase;
+}
+
+.title h2
+{
+    letter-spacing: 0.10em;
+    font-weight: 700;
+    font-size: 2em;
+    color: #171717;
+}
+
+.title .byline
+{
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.90em;
+    color: #6F6F6F;
+}
+
+#sidebar
+{
+    float: right;
+    width: 345px;
+}
+
+#sidebar .title h2
+{
+    font-size: 1.6em;
+}
+
+#sidebar .box1
+{
+    margin-bottom: 3em;
+}
+
+ul.style2
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.style2 li
+{
+    border-top: solid 1px #E5E5E5;
+    padding: 0.80em 0;
+}
+
+ul.style2 li:first-child
+{
+    border-top: 0;
+    padding-top: 0;
+}

@@ -32,6 +32,9 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         profile_data = validated_data.pop('profile')
         profile = instance.profile
 
+        instance.username = validated_data.get('username', instance.username)
+        instance.save()
+
         instance.email = validated_data.get('email', instance.email)
         instance.save()
 
@@ -58,4 +61,4 @@ class PostSerializer(serializers.ModelSerializer):
 class NewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = News
-        fields = ('id', 'title', 'body', 'date')
+        fields = ('id', 'title', 'body', 'date', 'image')

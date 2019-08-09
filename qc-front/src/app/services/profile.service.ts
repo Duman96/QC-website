@@ -24,15 +24,4 @@ export class ProfileService {
       })
     };
   }
-
-  getBlobThumbnail(): Observable<Blob> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'      
-    });
-    return this.http.post<Blob>(this.thumbnailFetchUrl,
-      {
-        "url": "http://127.0.0.1:8000/media/uploads/aIaKWuugaDA.jpg"
-      }, {headers: headers, responseType: 'blob' as 'json' });
-  }
 }

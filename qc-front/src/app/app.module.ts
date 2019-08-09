@@ -15,15 +15,21 @@ import { ProfileComponent } from './profile/profile.component';
 import { AuthInterceptor } from './AuthInterceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Ng2ImgMaxModule } from 'ng2-img-max';
-
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { IndexComponent } from './index/index.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 const routes: Routes = [
-  { path: '', component: NewsComponent },
-  { path: 'header', component: HeaderComponent, canActivate: [AuthGuard] },
-  { path: 'login', component: LoginComponent },
-  { path: '**', redirectTo: '' }
-];
+{ path: '', component: WelcomeComponent },
+{ path: 'news', component: NewsComponent },
+{ path: 'header', component: HeaderComponent, canActivate: [AuthGuard] },
+{ path: 'profile', component: ProfileComponent},
+{ path: 'index', component: IndexComponent },
+{ path: 'login', component: LoginComponent},
+{ path: 'navbar', component: NavbarComponent, canActivate: [AuthGuard] },
+{ path: '**', redirectTo: '' }];
 
 @NgModule({
   declarations: [
@@ -32,7 +38,10 @@ const routes: Routes = [
     NewsComponent,
     HeaderComponent,
     FooterComponent,
-    ProfileComponent
+    ProfileComponent,
+    IndexComponent,
+    NavbarComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

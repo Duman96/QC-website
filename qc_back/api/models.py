@@ -40,10 +40,10 @@ class Post(models.Model):
 class News(models.Model):
     title = models.CharField(default='', max_length=255)
     body = models.CharField(default='', max_length=255)
-    mydate = datetime.now()
     date = models.DateTimeField(
-        default=mydate.strftime("%Y-%m-%d %H:%M:%S")
+        auto_now_add=True
     )
+    image = models.ImageField(upload_to='uploads', blank=True)
     # date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     def __str__(self):

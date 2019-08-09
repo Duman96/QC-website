@@ -1,50 +1,48 @@
-<!--<header>
-    <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
-    <div><a href="https://www.sk.kz" class="navbar-brand">QazCloud</a></div>
-    
-    <ul class="navbar-nav">
-       
-      <li><a routerLink="/" class="nav-link">News</a></li>
-      <li><a routerLink="/addemployee" class="nav-link">For Workers</a></li>
-      <li><a routerLink="/login" class="nav-link">User Profile</a></li>
-      <li><a routerLink="/logout" class="nav-link">LogOut</a></li>
-    
-    </ul>
-      </nav>
-    </header>-->
+<head>
 
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
 
-<!-- header -->
-<header class="myheader">
-  <h1 id="logo"><a href="#">WebLab</a></h1>
-    <div class="topnav">
-        <a class="active" href="#home">Home</a>
-        <a href="#news">News</a>
-        <a href="#contact" >Contact</a>
-        <a href="#about" >About</a>
-        <a id="sg" *ngIf="!(isLoggedIn)" href="login">Sign In</a>
-        <!--<a (click)="logout()" *ngIf="isLoggedIn" >LogOut</a>-->
-        <div class="dropdown">
-            <button class="dropbtn">Duman Iklassov 
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="profile">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-        </div> 
-        <!-- <a class="top-profile" href="profile" *ngIf="isLoggedIn" >
+</head>
+
+<body>
+<div id="header-wrapper">
+	<div id="header-wrapper2">
+		<div id="header" class="container">
+			<div id="logo">
+				<h1><a href="#">QazCloud</a></h1>
+			</div>
+			<div id="menu">
+				<ul>
+					<li class="current_page_item"><a href="" accesskey="1" title="">Homepage</a></li>
+					<li><a href="news" accesskey="2" title="">News</a></li>
+					<li><a *ngIf="isLoggedIn" href="#" accesskey="3" title="">About Us</a></li>
+					<li><a *ngIf="!isLoggedIn" href="login" accesskey="4" title="">Sign In</a></li>
+					<li>
+            <div class="dropdown" *ngIf="isLoggedIn" accesskey="5">
+                <a class="dropbtn" href="profile">{{ profile.first_name }} {{ profile.last_name }}</a> 
+                  <!-- <i class="fa fa-caret-down"></i> -->  
+                <ul>
+                  <li><a href="profile">Profile</a></li>
+                  <li><a (click)="logout()" >Logout</a></li>
+                </ul>
+            </div> 
+          </li>
+				</ul>
+			</div>
+		</div>
+		<div class="major">
+			<h2>Maecenas luctus lectus at sapien</h2>
+			<span>Integer sit amet pede vel arcu aliquet pretium</span> <a href="#" class="button">Read More</a> </div>
+	</div>
+</div>
+</body>
+<!-- <a class="top-profile" href="profile" *ngIf="isLoggedIn" >
             <div class="top-profile-name">{{ profile.first_name }} {{ profile.last_name }}</div>
             <img src="{{profile.profile.photo}}" alt="Avatar">
             <div>
               
             </div>
         </a> -->
-    </div>
-</header>
-<!-- end of header -->
-
 
 <!-- <header class="myheader">
     
