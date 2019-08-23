@@ -1,11 +1,15 @@
+*{
+  margin: 0px;
+  box-sizing: border-box !important;
+}
+
 .example {
     transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay];
   }
-  
-  html, body
-  {
-    height: 100%;
-  }
+
+html{
+  margin: 0px;
+}
   
   body
   {
@@ -18,126 +22,10 @@
     color: #363636;
   }
   
-  h1, h2, h3
-  {
-    margin: 0;
-    padding: 0;
-  }
-  
-  p, ol, ul
-  {
-    margin-top: 0px;
-  }
-  
-  p
-  {
-    line-height: 180%;
-  }
-  
-  a
-  {
-    color: #EBA612;
-  }
-  
-  a:hover
-  {
-    text-decoration: none;
-  }
-  
-  a img
-  {
-    border: none;
-  }
-  
-  
-  .button
-  {
-    display: inline-block;
-    margin-top: 2em;
-    padding: 1em 3em;
-    background: #FCC44B;
-    -moz-transition: opacity 0.25s ease-in-out;
-    -webkit-transition: opacity 0.25s ease-in-out;
-    -o-transition: opacity 0.25s ease-in-out;
-    -ms-transition: opacity 0.25s ease-in-out;
-    transition: opacity 0.25s ease-in-out;
-    letter-spacing: 0.20em;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 0.90em;
-    color: #000;
-  }
-  
-          .button:hover
-          {
-              background: #FBC551;
-          -moz-transition: opacity 0.25s ease-in-out;
-          -webkit-transition: opacity 0.25s ease-in-out;
-          -o-transition: opacity 0.25s ease-in-out;
-          -ms-transition: opacity 0.25s ease-in-out;
-          transition: opacity 0.25s ease-in-out;
-          }
-          
-          .button:active
-          {
-              background: #F2B42F;
-          -moz-transition: opacity 0.25s ease-in-out;
-          -webkit-transition: opacity 0.25s ease-in-out;
-          -o-transition: opacity 0.25s ease-in-out;
-          -ms-transition: opacity 0.25s ease-in-out;
-          transition: opacity 0.25s ease-in-out;
-          }
-  
-  .image
-  {
-    display: inline-block;
-  }
-  
-    .image img
-    {
-      display: block;
-      width: 100%;
-    }
-  
-  .image-full
-  {
-    display: block;
-    width: 100%;
-    margin: 0 0 2em 0;
-  }
-  
-  .image-left
-  {
-    float: left;
-    margin: 0 2em 2em 0;
-  }
-  
-  .image-centered
-  {
-    display: block;
-    margin: 0 0 2em 0;
-  }
-  
-    .image-centered img
-    {
-      margin: 0 auto;
-      width: auto;
-    }
-  
-  hr
-  {
-    display: none;
-  }
-  
   #header
   {
       position: relative;
       height: 150px;
-  }
-  
-  .container
-  {
       width: 1200px;
       margin: 0px auto;
   }
@@ -199,11 +87,13 @@
       }
       #menu li a
       {
+          transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay];
           -webkit-transition: background 2s;
       }
       
       #menu li:hover a
       {
+          transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay];
           background: rgb(95, 177, 224);
           -webkit-transition: background 1s;
       }
@@ -215,10 +105,16 @@
     
   #header-wrapper
   {
-    overflow: hidden;
+    overflow: visible;
     height: 100px;
     background: linear-gradient(45deg, rgb(80, 204, 235), rgb(9, 45, 61));
     background-size: 100%;
+    position: relative;
+    width: 100%;
+  }
+
+  #header-wrapper:after{
+    background: #f4f4f4;
   }
   
       ul.style2
@@ -240,41 +136,7 @@
           padding-top: 0;
       }
     
-  .major
-  {
-      margin-top: 14em;
-      text-align: center;
-  }
-      
-      .major h2
-      {
-          padding: 0em 1em;
-          background: rgba(0,0,0,.5);
-          text-transform: uppercase;
-          line-height: 2em;
-          font-size: 3em;
-          color: #FFF;
-      }
-  
-      .major span
-      {
-          display: block;
-          padding: 0em 1em;
-          background: rgba(0,0,0,.25);
-          line-height: 3em;
-          text-transform: uppercase;
-          font-size: 1.5em;
-          font-weight: 700;
-          color: #FFF;
-      }
-  
-      .major .button
-      {
-          background: #FCC44B;
-          font-size: 1.5em;
-          font-weight: 700;
-      }
-  
+ 
   .dropdown {
     display: block;
     margin: 0 auto;
@@ -282,7 +144,7 @@
     width: 200px;
   }
   
-  .dropdown > a {
+  .dropbtn {
     color: #fff;
     display: block;
     padding: 10px 20px;
@@ -295,11 +157,13 @@
     height: 0;
     left: 0;
     opacity: 0;
-    position: absolute;
+    position: relative;
     transition: all .4s ease;
-    top: 35px;
+    top: 0;
     width: 100%;
-    margin-top: 12px;
+    margin-top: 0px;
+    z-index: 99;
+    
   }
   
   .dropdown:hover ul {
@@ -309,8 +173,9 @@
   }
   
   .dropdown ul li a {
-    width: 157px;
+    width: 200px;
     padding: 5px 20px;
+    z-index: 99;
   }
   
   .dropdown ul li a:hover{

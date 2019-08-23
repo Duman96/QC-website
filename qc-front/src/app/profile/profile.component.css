@@ -1,14 +1,11 @@
+
 .example {
     transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay];
 }
 
-html, body
-{
-	height: 100%;
-}
-
 body
 {
+  height: 100%;
 	margin: 0px;
 	padding: 0px;
 	background: #171717;
@@ -18,123 +15,131 @@ body
 	color: #363636;
 }
 
-h1, h2, h3
-{
-	margin: 0;
-	padding: 0;
-}
-
-p, ol, ul
-{
-	margin-top: 0px;
-}
-
-p
-{
-	line-height: 180%;
-}
-
-a
-{
-	color: #EBA612;
-}
-
-a:hover
-{
-	text-decoration: none;
-}
-
-.emp-profile{
-    padding: 3%;
-    margin-top: 3%;
-    margin-bottom: 3%;
-    border-radius: 0.5rem;
-    background: #fff;
-}
-.profile-img{
-    width: 60%;
-    height: 200px;
-    text-align: center;
-}
-.profile-img img{
+  .rela-block {
+    display: block;
+    position: relative;
+    margin: auto;
+  }
+  
+  .floated {
+    display: inline-block;
+    position: relative;
+    margin: false;
+  }
+  .floated.right {
+    float: right;
+  }
+  body {
+    background-color: #f4f4f4;
+  }
+  .container {
+    z-index: 1;
+    width: 92%;
+    max-width: 1126px;
+    background-color: #f4f4f4;
+    margin: 70px auto;
+    padding: 70px 0;
+  }
+  .profile-card {
+    width: calc(100% - 40px);
+    padding-top: 100px;
+    margin: 70px auto 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px -2px rgba(0,0,0,0.26);
+  }
+  .profile-pic {
+    display: false;
+    position: absolute;
+    margin: false;
+    top: -90px;
+    left: 50%;
+    right: false;
+    bottom: false;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    height: 180px;
+    width: 180px;
+    border: 10px solid #fff;
+    border-radius: 100%;
+    background: center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
+  .profile-pic img{
     width: 100%;
     height: 100%;
-}
-.profile-img .file {
-    position: relative;
+  }
+  .profile-name-container {
+    margin: 0 auto 10px;
+    padding: 10px;
+    text-align: center;
+  }
+  .user-name {
+    font-family: "Montserrat";
+    font-size: 24px;
+    letter-spacing: 3px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .profile-card-stats {
+    height: 75px;
+    padding: 10px 0px;
+    text-align: center;
     overflow: hidden;
-    margin-top: -20%;
-    width: 70%;
-    border: none;
-    border-radius: 0;
-    font-size: 15px;
-    background: #212529b8;
+  }
+  .profile-stat {
+    height: 100%;
+    width: 33.3333%;
+  }
+  .profile-stat:after {
+    color: #999;
+  }
+  .works::after {
+    content: "Edit Posts";
+  }
+  .followers::after {
+    content: "Edit Profile";
+  }
+
+  @media screen and (max-width: 1300px) {
+    .container {
+      max-width: 843px;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .container {
+      max-width: 562px;
+    }
+  }
+  @media screen and (max-width: 550px) {
+    .profile-card-stats {
+      height: 0;
+      padding: 0px;
+    }
+    .profile-pic {
+      height: 140px;
+      width: 140px;
+      top: -70px;
+    }
+    .profile-card {
+      padding-top: 70px;
+      margin: 50px auto 30px;
+    }
+  }
+
+.bio{
+    margin-left: 240px;
 }
-.profile-img .file input {
-    position: absolute;
-    opacity: 0;
-    right: 0;
-    top: 0;
+
+.row{
+    display: inline-block;
 }
-.profile-head h5{
-    color: #333;
-}
-.profile-head h6{
-    color: #0062cc;
-}
-.profile-edit-btn{
-    border: none;
-    border-radius: 1.5rem;
-    width: 70%;
-    padding: 2%;
-    font-weight: 600;
-    color: #6c757d;
-    cursor: pointer;
-}
-.proile-rating{
-    font-size: 12px;
-    color: #818182;
-    margin-top: 5%;
-}
-.proile-rating span{
-    color: #495057;
-    font-size: 15px;
-    font-weight: 600;
-}
-.profile-head .nav-tabs{
-    margin-bottom:5%;
-}
-.profile-head .nav-tabs .nav-link{
-    font-weight:600;
-    border: none;
-}
-.profile-head .nav-tabs .nav-link.active{
-    border: none;
-    border-bottom:2px solid #0062cc;
-}
-.profile-work{
-    padding: 14%;
-    margin-top: -15%;
-}
-.profile-work p{
-    font-size: 12px;
-    color: #818182;
-    font-weight: 600;
-    margin-top: 10%;
-}
-.profile-work a{
-    text-decoration: none;
-    color: #495057;
-    font-weight: 600;
-    font-size: 14px;
-}
-.profile-work ul{
-    list-style: none;
-}
-.profile-tab label{
-    font-weight: 600;
-}
-.profile-tab p{
-    font-weight: 600;
-    color: #0062cc;
-}
+
+
+
+  
+
+  
+

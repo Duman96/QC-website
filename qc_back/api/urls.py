@@ -3,7 +3,6 @@ from django.urls import path
 from rest_framework import routers
 from api.views import UserViewSet, PostViewSet, NewsViewSet, CurrentUserViewSet
 
-
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'posts', PostViewSet)

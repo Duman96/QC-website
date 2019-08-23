@@ -1,51 +1,6 @@
 <app-navbar></app-navbar>
 
-<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<div class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-title">
-              <h2>Recent News</h2>
-            </div>
-          </div>
-          <div class="col-md-12" *ngFor="let n of news">
-            <div class="post post-row">
-              <a class="post-img" href="#"><img src="/assets/img/post-4.jpg" alt=""></a>
-              <div class="post-body">
-                <div class="post-meta">
-                  <a class="post-category cat-2" href="#">JavaScript</a>
-                  <span class="post-date">{{ n.date }}</span>
-                </div>
-                <h3 class="post-title"><a href="#">{{ n.title }}</a></h3>
-                <p>{{ n.body }}</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-12">
-            <div class="section-row">
-              <button class="primary-button center-block">Load More</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="aside-widget text-center">
-          <a href="#" style="display: inline-block;margin: auto;">
-            <img class="img-responsive" src="/assets/img/ad-1.jpg" alt="">
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
 <body>
 <div id="wrapper">
   <div id="two-column" class="container">
@@ -56,8 +11,8 @@
       <!-- <div class="title">
         <h2>Vestibulum luctus venenatis</h2>
       </div> -->
-      <a href="#" class="image image-full"><img src="{{ n.image }}" alt="" /></a>
-      <p>{{ n.title }}</p>
+      <a href="#page" class="image image-full"><img src="{{ n.image }}" alt="" /></a>
+      <p href="#page" >{{ n.title }}</p>
     </div>
     <!-- <div id="tbox2">
       <div class="title">

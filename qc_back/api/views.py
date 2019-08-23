@@ -2,6 +2,7 @@ from rest_framework import viewsets, permissions
 from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view
+from rest_framework.decorators import action
 
 from api.models import User, Post, News
 from api.serializers import UserSerializer, PostSerializer, NewsSerializer
@@ -26,34 +27,35 @@ class UserViewSet(viewsets.ModelViewSet):
             permission_classes = [IsAdminUser]
         return [permission() for permission in permission_classes]
 
-    # def get_object(self):
-    #     pk = self.kwargs.get('pk')
-    #
-    #     if pk == "current":
-    #         return self.request.user
-    #
-    #     return super(UserViewSet, self).get_object()
+    def get_object(self):
+        return self.request.user
 
 
 class CurrentUserViewSet(viewsets.ModelViewSet):
-    """
-    Lists information related to the current user.
-    """
+
     serializer_class = UserSerializer
-    permission_classes = (IsAuthenticated,)
+
+    def get_permissions(self):
+        permission_classes = []
+        if self.action == 'create':
+            permission_classes = [AllowAny]
+        elif self.action == 'retrieve' or self.action == 'update' or self.action == 'partial_update':
+            permission_classes = [IsLoggedInUserOrAdmin]
+        elif self.action == 'list' or self.action == 'destroy':
+            permission_classes = [IsAdminUser]
+        return [permission() for permission in permission_classes]
 
     def list(self, request, *args, **kwargs):
         instance = request.user
         serializer = self.get_serializer(instance)
         return Response(serializer.data)
 
+    # def update(self, request, pk=None, *args, **kwargs):
+    #     serializer = UserSerializer(instance=request.user, data=request.data)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #     return Response(serializer.data)
 
-# @api_view(['GET'])
-# def getprofile(request):
-#     serializer = UserSerializer(request.user)
-#     return Response({
-#         'profile': user.profile,
-#     })
 
 class PostViewSet(viewsets.ModelViewSet):
     """

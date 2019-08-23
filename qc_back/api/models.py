@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 from django.utils import timezone
-from datetime import datetime, time
+from datetime import datetime
 
 
 class User(AbstractUser):
@@ -25,7 +25,7 @@ class UserProfile(models.Model):
     country = models.CharField(max_length=50)
     city = models.CharField(max_length=50)
     department = models.CharField(max_length=30)
-    photo = models.ImageField(upload_to='uploads/', blank=True)
+    photo = models.ImageField(upload_to='uploads', blank=True)
 
 
 class Post(models.Model):
@@ -39,12 +39,11 @@ class Post(models.Model):
 
 class News(models.Model):
     title = models.CharField(default='', max_length=255)
-    body = models.CharField(default='', max_length=255)
+    body = models.TextField(default='', max_length=99999)
+    image = models.ImageField(upload_to='uploads', blank=True)
     date = models.DateTimeField(
         auto_now_add=True
     )
-    image = models.ImageField(upload_to='uploads', blank=True)
-    # date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     def __str__(self):
         return self.body

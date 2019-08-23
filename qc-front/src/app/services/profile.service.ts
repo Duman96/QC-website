@@ -13,6 +13,7 @@ export class ProfileService {
   constructor(private http: HttpClient, private userService: UserService) { }
 
   list(){
+    //return this.http.get('http://10.189.85.221:8989/api/current/');
     return this.http.get('http://127.0.0.1:8000/api/current/');
   }
 

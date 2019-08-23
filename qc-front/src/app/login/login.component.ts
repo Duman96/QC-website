@@ -10,7 +10,7 @@ import {throwError} from 'rxjs';
 export class LoginComponent implements OnInit{
   public user: any;
  
-  constructor(private userService: UserService) { }
+  constructor(public userService: UserService) { }
  
   ngOnInit() {
     this.user = {

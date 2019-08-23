@@ -1,0 +1,95 @@
+.image
+{
+    display: inline-block;
+}
+
+    .image img
+    {
+        display: block;
+        width: 100%;
+    }
+
+	.image-full
+	{
+        display: block;
+        height: 270px;
+		width: 100%;
+		margin: 0 0 2em 0;
+	}
+	
+	.image-left
+	{
+		float: left;
+		margin: 0 2em 2em 0;
+	}
+	
+	.image-centered
+	{
+		display: block;
+		margin: 0 0 2em 0;
+	}
+
+    .image-centered img
+    {
+        margin: 0 auto;
+        width: auto;
+    }
+
+
+
+#wrapper {
+    background: #FFFFFF url(/assets/img/bg01.png) repeat;
+}
+
+.container
+{
+	width: 1200px;
+	margin: 0px auto;
+}
+
+#two-column
+{
+    overflow: auto;
+    padding: 3em 0em 5em 0em;
+}
+	
+#two-column .title h2
+{
+    font-size: 1.6em;
+}
+
+#two-column #tbox1
+{
+    float: left;
+    width: 350px;
+    margin: 20px;
+}
+
+/* #two-column #tbox2
+{
+    float: right;
+    width: 550px;
+} */
+
+.title
+{
+    margin-bottom: 3em;
+    text-transform: uppercase;
+}
+
+.title h2
+{
+    letter-spacing: 0.10em;
+    font-weight: 700;
+    font-size: 2em;
+    color: #171717;
+}
+
+.title .byline
+{
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.90em;
+    color: #6F6F6F;
+}

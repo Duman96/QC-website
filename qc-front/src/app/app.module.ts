@@ -19,6 +19,7 @@ import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { IndexComponent } from './index/index.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { NewspageComponent } from './newspage/newspage.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
 { path: 'news', component: NewsComponent },
 { path: 'header', component: HeaderComponent, canActivate: [AuthGuard] },
 { path: 'profile', component: ProfileComponent},
+{ path: 'page', component: NewspageComponent },
 { path: 'index', component: IndexComponent },
 { path: 'login', component: LoginComponent},
 { path: 'navbar', component: NavbarComponent, canActivate: [AuthGuard] },
@@ -41,14 +43,15 @@ const routes: Routes = [
     ProfileComponent,
     IndexComponent,
     NavbarComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    NewspageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { useHash: true }),
     Ng2ImgMaxModule
   ],
   providers: [
