@@ -12,16 +12,16 @@
       </div>
       <div id="menu">
         <ul>
-          <li class="current_page_item"><a href="" accesskey="1" title="">Homepage</a></li>
-          <li><a href="#news" accesskey="2" title="">News</a></li>
-          <li><a *ngIf="isLoggedIn" href="#" accesskey="3" title="">About Us</a></li>
-          <li><a *ngIf="!isLoggedIn" href="#login" accesskey="4" title="">Sign In</a></li>
+          <li class="current_page_item"><a routerLink="/" accesskey="1" title="">Homepage</a></li>
+          <li><a routerLink="/news" accesskey="2" title="">News</a></li>
+          <li><a *ngIf="isLoggedIn" routerLink="/" accesskey="3" title="">About Us</a></li>
+          <li><a *ngIf="!isLoggedIn" routerLink="/login" accesskey="4" title="">Sign In</a></li>
           <li>
             <div class="dropdown" *ngIf="isLoggedIn" accesskey="5">
-                <a class="dropbtn" href="#profile">{{ profile.first_name }} {{ profile.last_name }}</a> 
+                <a class="dropbtn" routerLink="/profile">{{ profile.first_name }}</a> 
                   <!-- <i class="fa fa-caret-down"></i> -->  
                 <ul>
-                  <li><a href="#profile">Profile</a></li>
+                  <li><a routerLink="/profile">Profile</a></li>
                   <li><a (click)="logout()" >Logout</a></li>
                 </ul>
             </div> 

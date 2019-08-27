@@ -58,4 +58,4 @@ class PostSerializer(serializers.ModelSerializer):
 class NewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = News
-        fields = ('id', 'title', 'body', 'date', 'image')
+        fields = ('id', 'title', 'body', 'date', 'image', 'author')

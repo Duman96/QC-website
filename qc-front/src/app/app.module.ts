@@ -27,7 +27,7 @@ const routes: Routes = [
 { path: 'news', component: NewsComponent },
 { path: 'header', component: HeaderComponent, canActivate: [AuthGuard] },
 { path: 'profile', component: ProfileComponent},
-{ path: 'page', component: NewspageComponent },
+{ path: 'news/:id', component: NewspageComponent },
 { path: 'index', component: IndexComponent },
 { path: 'login', component: LoginComponent},
 { path: 'navbar', component: NavbarComponent, canActivate: [AuthGuard] },

@@ -25,7 +25,7 @@ class UserProfile(models.Model):
     country = models.CharField(max_length=50)
     city = models.CharField(max_length=50)
     department = models.CharField(max_length=30)
-    photo = models.ImageField(upload_to='uploads', blank=True)
+    photo = models.ImageField(upload_to='uploads', blank=True, default='uploads/default.png')
 
 
 class Post(models.Model):
@@ -40,10 +40,11 @@ class Post(models.Model):
 class News(models.Model):
     title = models.CharField(default='', max_length=255)
     body = models.TextField(default='', max_length=99999)
-    image = models.ImageField(upload_to='uploads', blank=True)
+    image = models.ImageField(upload_to='uploads', blank=True, default='uploads/default.jpg')
     date = models.DateTimeField(
         auto_now_add=True
     )
+    author = models.CharField(default='', max_length=255)
 
     def __str__(self):
         return self.body

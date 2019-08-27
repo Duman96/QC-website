@@ -14,6 +14,11 @@ export class NewsService {
     return this.http.get('http://127.0.0.1:8000/api/news/');
   }
 
+  item(id){
+    // return this.http.get('http://10.189.85.221:8989/api/news/');
+    return this.http.get(`http://127.0.0.1:8000/api/news/${id}/` );
+  }
+
   getHttpOptions() {
     return {
       headers: new HttpHeaders({

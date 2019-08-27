@@ -61,8 +61,20 @@
 #two-column #tbox1
 {
     float: left;
-    width: 350px;
     margin: 20px;
+}
+
+#two-column #tbox1 a{
+    position: relative;
+    margin: auto;
+    width: 400px;
+}
+
+
+#two-column #tbox1 p{
+    position: relative;
+    margin: auto;
+    width: 80%;
 }
 
 /* #two-column #tbox2
@@ -92,4 +104,9 @@
     font-weight: 400;
     font-size: 0.90em;
     color: #6F6F6F;
+}
+
+#between{
+    border: 7px;
+    color: black;
 }
