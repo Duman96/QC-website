@@ -13,11 +13,13 @@ import { ActivatedRoute } from '@angular/router';
 export class NewspageComponent implements OnInit {
 
   public news;
+  public list;
 
   constructor(private newsService: NewsService, private userService: UserService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     
+    this.getList();
     // console.log(this.route.snapshot.params.id);
     this.route.params.subscribe((params) => {
       this.getNews(params.id);
@@ -29,6 +31,23 @@ export class NewspageComponent implements OnInit {
       // the first argument is a function which runs on success
       data => {
         this.news = data;
+        // convert the dates to a nice format
+        // for (let news of this.news) {
+        //   news.date = new Date(news.date);
+        // }
+      },
+      // the second argument is a function which runs on error
+      err => console.error(err),
+      // the third argument is a function which runs on completion
+      () => console.log('done loading posts')
+    );
+  }
+
+  getList() {
+    this.newsService.list().subscribe(
+      // the first argument is a function which runs on success
+      data => {
+        this.list = data;
         // convert the dates to a nice format
         // for (let news of this.news) {
         //   news.date = new Date(news.date);

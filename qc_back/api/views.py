@@ -50,6 +50,16 @@ class CurrentUserViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(instance)
         return Response(serializer.data)
 
+    def update(self, request, pk=None, project_pk=None):
+        print(request.data['result'])
+
+    def partial_update(self, request, *args, **kwargs):
+        instance = self.queryset.get(pk=kwargs.get('pk'))
+        serializer = self.serializer_class(instance, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
     # def update(self, request, pk=None, *args, **kwargs):
     #     serializer = UserSerializer(instance=request.user, data=request.data)
     #     if serializer.is_valid():
