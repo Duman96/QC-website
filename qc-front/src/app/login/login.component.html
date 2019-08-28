@@ -46,7 +46,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
 	<!-- <link rel="icon" type="image/png" href="images/icons/favicon.ico"/> -->
-  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">  
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
 <!--===============================================================================================-->
 </head>
 <body>
@@ -65,7 +66,7 @@
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Username is required">
-						<input class="input100" type="email" name="username" [(ngModel)]="user.email">
+						<input class="input100" type="email" name="username" [(ngModel)]="user.username">
             <span class="focus-input100"></span>
             <span *ngFor="let error of userService.errors.username"><br />
               {{ error }}</span>

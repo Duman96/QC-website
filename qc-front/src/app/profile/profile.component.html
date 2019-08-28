@@ -11,7 +11,7 @@
       <!-- left column -->
       <div class="col-md-3">
         <div class="text-center">
-          <img src="{{ profile.profile.photo }}" class="avatar img-circle" alt="avatar">
+          <img src="{{ profile?.profile.photo }}" class="avatar img-circle" alt="avatar">
         </div>
       </div>
       
@@ -28,13 +28,13 @@
           <div class="form-group">
             <label class="col-lg-3 control-label">First name:</label>
             <div class="col-lg-8">
-                <h4>{{profile?.first_name}}</h4>
+                <h4>{{profile?.profile.first_name}}</h4>
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Last name:</label>
             <div class="col-lg-8">
-              <h4>{{profile?.last_name}}</h4>
+              <h4>{{profile?.profile.last_name}}</h4>
             </div>
           </div>
           <div class="form-group">

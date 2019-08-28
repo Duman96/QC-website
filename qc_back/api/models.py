@@ -7,11 +7,11 @@ from datetime import datetime
 
 
 class User(AbstractUser):
-    username = models.CharField(blank=True, null=True, max_length=10)
+    username = models.CharField(blank=True, null=True, max_length=10, unique=True)
     email = models.EmailField(_('email address'), unique=True)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
+    REQUIRED_FIELDS = ['username']
 
     def __str__(self):
         return "{}".format(self.email)
@@ -19,6 +19,8 @@ class User(AbstractUser):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
+    first_name = models.CharField(max_length=55)
+    last_name = models.CharField(max_length=55)
     position = models.CharField(max_length=30)
     dob = models.DateField()
     address = models.CharField(max_length=255)
@@ -35,7 +37,6 @@ class Post(models.Model):
 
     def __str__(self):
         return self.body
-
 
 class News(models.Model):
     title = models.CharField(default='', max_length=255)

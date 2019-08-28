@@ -1,0 +1,10 @@
+.text-center {
+    height: 180px !important;
+    width: 180px !important;
+    border: 10px solid #fff;
+    border-radius: 100%;
+}
+.text-center img{
+    width: 100% !important;
+    height: 100% !important;
+}

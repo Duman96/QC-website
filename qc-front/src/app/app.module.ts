@@ -20,6 +20,8 @@ import { IndexComponent } from './index/index.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { NewspageComponent } from './newspage/newspage.component';
+import { EditComponent } from './edit/edit.component';
+import { AboutComponent } from './about/about.component';
 
 
 const routes: Routes = [
@@ -29,7 +31,9 @@ const routes: Routes = [
 { path: 'profile', component: ProfileComponent},
 { path: 'news/:id', component: NewspageComponent },
 { path: 'index', component: IndexComponent },
+{ path: 'about', component: AboutComponent },
 { path: 'login', component: LoginComponent},
+{ path: 'edit', component: EditComponent},
 { path: 'navbar', component: NavbarComponent, canActivate: [AuthGuard] },
 { path: '**', redirectTo: '' }];
 
@@ -44,7 +48,9 @@ const routes: Routes = [
     IndexComponent,
     NavbarComponent,
     WelcomeComponent,
-    NewspageComponent
+    NewspageComponent,
+    EditComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

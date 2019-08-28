@@ -5,7 +5,7 @@ from api.models import User, UserProfile, Post, News
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
-        fields = ('position', 'dob', 'address', 'country', 'city', 'department', 'photo')
+        fields = ('first_name', 'last_name', 'position', 'dob', 'address', 'country', 'city', 'department', 'photo')
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -16,7 +16,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'first_name', 'last_name', 'password', 'profile')
+        fields = ('id', 'username', 'email', 'password', 'profile')
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
@@ -36,6 +36,8 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         instance.save()
 
         profile.position = profile_data.get('position', profile.position)
+        profile.first_name = profile_data.get('first_name', profile.first_name)
+        profile.last_name = profile_data.get('last_name', profile.last_name)
         profile.dob = profile_data.get('dob', profile.dob)
         profile.address = profile_data.get('address', profile.address)
         profile.country = profile_data.get('country', profile.country)
